@@ -19,6 +19,7 @@
 }
 
 - (BOOL)canUse:(CatuiSemver *)api {
+    if (!api) return NO;
     return YES;
 }
 

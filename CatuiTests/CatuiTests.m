@@ -44,4 +44,11 @@ void assertCanUse(CatuiSemver *consumer, CatuiSemver *api) {
     assertCanUse(consumer, api);
 }
 
+- (void)testSemverCantUseNil {
+    CatuiSemver *api = mkSemver(1, 2, 3);
+    CatuiSemver *consumer = mkSemver(1, 2, 3);
+    XCTAssertFalse([api canSupport:nil]);
+    XCTAssertFalse([consumer canUse:nil]);
+}
+
 @end
