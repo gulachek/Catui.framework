@@ -22,17 +22,11 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    XCTAssertEqual(CatuiFoo(), 4);
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testCanConstructSemver {
+    CatuiSemver *semver = [[CatuiSemver alloc] initWithMajor:1 minor:2 patch:3];
+    XCTAssertEqual(semver.major, 1);
+    XCTAssertEqual(semver.minor, 2);
+    XCTAssertEqual(semver.patch, 3);
 }
 
 @end
