@@ -6,6 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <Catui/Catui.h>
 
 @interface CatuiTests : XCTestCase
 
@@ -24,6 +25,7 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssertEqual(CatuiFoo(), 4);
 }
 
 - (void)testPerformanceExample {
