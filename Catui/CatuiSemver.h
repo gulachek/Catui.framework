@@ -16,6 +16,9 @@
 
 - (id)initWithMajor:(unsigned int)major minor:(unsigned int)minor patch:(unsigned int)patch;
 
+- (BOOL)canUse:(CatuiSemver *)api;
+- (BOOL)canSupport:(CatuiSemver *)consumer;
+
 @end
 
 #endif /* CatuiSemver_h */

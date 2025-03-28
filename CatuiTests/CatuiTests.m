@@ -8,6 +8,15 @@
 #import <XCTest/XCTest.h>
 #import <Catui/Catui.h>
 
+CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch) {
+    return [[CatuiSemver alloc] initWithMajor:major minor:minor patch:patch];
+}
+
+void assertCanUse(CatuiSemver *consumer, CatuiSemver *api) {
+    XCTAssertTrue([consumer canUse:api]);
+    XCTAssertTrue([api canSupport:consumer]);
+}
+
 @interface CatuiTests : XCTestCase
 
 @end
@@ -27,6 +36,12 @@
     XCTAssertEqual(semver.major, 1);
     XCTAssertEqual(semver.minor, 2);
     XCTAssertEqual(semver.patch, 3);
+}
+
+- (void)testSemverCanUseSameVersion {
+    CatuiSemver *api = mkSemver(1, 2, 3);
+    CatuiSemver *consumer = mkSemver(1, 2, 3);
+    assertCanUse(consumer, api);
 }
 
 @end

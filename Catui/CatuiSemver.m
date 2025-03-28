@@ -18,4 +18,13 @@
     return self;
 }
 
+- (BOOL)canUse:(CatuiSemver *)api {
+    return YES;
+}
+
+- (BOOL)canSupport:(CatuiSemver *)consumer {
+    if (!consumer) return NO;
+    return [consumer canUse:self];
+}
+
 @end
