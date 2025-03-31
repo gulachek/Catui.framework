@@ -43,8 +43,8 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
 - (void)testSemverCantUseNil {
     CatuiSemver *api = mkSemver(1, 2, 3);
     CatuiSemver *consumer = mkSemver(1, 2, 3);
-    XCTAssertFalse([api canSupport:nil]);
-    XCTAssertFalse([consumer canUse:nil]);
+    XCTAssertFalse([api canSupport:(id _Nonnull)nil]);
+    XCTAssertFalse([consumer canUse:(id _Nonnull)nil]);
 }
 
 - (void)testSemverCanUseCompatibleVersion {
@@ -73,6 +73,13 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
     CatuiSemver *consumer = mkSemver(0, 1, 3);
     XCTAssertFalse([api canSupport:consumer]);
     XCTAssertFalse([consumer canUse:api]);
+}
+
+- (void)testCanInitWithString {
+    CatuiSemver *v = [[CatuiSemver alloc] initWithString:@"1.2.3" error:nil];
+    XCTAssertEqual(v.major, 1);
+    XCTAssertEqual(v.minor, 2);
+    XCTAssertEqual(v.patch, 3);
 }
 
 @end

@@ -35,21 +35,28 @@
  * @param patch The patch version component
  * @returns The initialized instance
  */
-- (id)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch;
+- (nonnull instancetype)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch;
+
+/**
+ * Initialize with a formatted semver string
+ * @param str The semver formatted string of the format "major.minor.patch"
+ * @returns The initialized instance
+ */
+- (nullable instancetype)initWithString:(NSString *_Nonnull)str error:(NSError *_Nullable *_Nullable)error;
 
 /**
  * Check if the instance's desired version can use another API's version according to semantic versioning conventions
  * @param api The other API's version potentially supporting this instance's desired version
  * @returns YES if this instance's desired version can use the API's version
  */
-- (BOOL)canUse:(CatuiSemver *)api;
+- (BOOL)canUse:(CatuiSemver *_Nonnull)api;
 
 /**
  * Check if the instance's version can support another consumer's desired API version according to semantic versioning conventions
  * @param consumer The other consumer's desired API version potentially being supported by this instance's API version
  * @returns YES if this instance's API version can support the consumer's desired API version
  */
-- (BOOL)canSupport:(CatuiSemver *)consumer;
+- (BOOL)canSupport:(CatuiSemver *_Nonnull)consumer;
 
 @end
 

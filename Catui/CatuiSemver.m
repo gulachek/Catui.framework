@@ -15,10 +15,20 @@
     catui_semver _v;
 }
 
-- (id)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch {
+- (instancetype)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch {
     _v.major = major;
     _v.minor = minor;
     _v.patch = patch;
+    return self;
+}
+
+- (nullable instancetype)initWithString:(NSString*)str error:(NSError *_Nullable *_Nullable)error {
+    const char *cstr = [str cStringUsingEncoding:NSUTF8StringEncoding];
+    int success = catui_semver_from_string(cstr, strlen(cstr), &self->_v);
+    if (!success) {
+        return nil;
+    }
+    
     return self;
 }
 
