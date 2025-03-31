@@ -71,9 +71,9 @@ rm "$UNIX_DOWNLOAD"
 CATUI_DOWNLOAD="$VENDORSRC/catui-download.tgz"
 
 download \
-	-u "https://github.com/gulachek/catui/releases/download/v0.1.3/catui-0.1.3.tgz" \
+	-u "https://github.com/gulachek/catui/releases/download/v0.1.4/catui-0.1.4.tgz" \
 	-o "$CATUI_DOWNLOAD" \
-	-c "3957d8249dcbc8fa6f8add23263cef7c7c0a3fb21bb3cf865316dcd8ff8c97bc"
+	-c "02d7edcf952ebe16b6cb46a7a669f0965d07de1e006eddb5150a3f75e1696a2d"
 
 CATUI="$VENDORSRC/catui"
 md "$CATUI"
