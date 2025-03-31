@@ -12,11 +12,6 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
     return [[CatuiSemver alloc] initWithMajor:major minor:minor patch:patch];
 }
 
-void assertCanUse(CatuiSemver *consumer, CatuiSemver *api) {
-    XCTAssertTrue([consumer canUse:api]);
-    XCTAssertTrue([api canSupport:consumer]);
-}
-
 @interface CatuiTests : XCTestCase
 
 @end
@@ -41,7 +36,8 @@ void assertCanUse(CatuiSemver *consumer, CatuiSemver *api) {
 - (void)testSemverCanUseSameVersion {
     CatuiSemver *api = mkSemver(1, 2, 3);
     CatuiSemver *consumer = mkSemver(1, 2, 3);
-    assertCanUse(consumer, api);
+    XCTAssertTrue([api canSupport:consumer]);
+    XCTAssertTrue([consumer canUse:api]);
 }
 
 - (void)testSemverCantUseNil {
@@ -49,6 +45,34 @@ void assertCanUse(CatuiSemver *consumer, CatuiSemver *api) {
     CatuiSemver *consumer = mkSemver(1, 2, 3);
     XCTAssertFalse([api canSupport:nil]);
     XCTAssertFalse([consumer canUse:nil]);
+}
+
+- (void)testSemverCanUseCompatibleVersion {
+    CatuiSemver *api = mkSemver(1, 5, 0);
+    CatuiSemver *consumer = mkSemver(1, 2, 3);
+    XCTAssertTrue([api canSupport:consumer]);
+    XCTAssertTrue([consumer canUse:api]);
+}
+
+- (void)testSemverCantUseIncompatibleVersion {
+    CatuiSemver *api = mkSemver(2, 0, 0);
+    CatuiSemver *consumer = mkSemver(1, 2, 3);
+    XCTAssertFalse([api canSupport:consumer]);
+    XCTAssertFalse([consumer canUse:api]);
+}
+
+- (void)testSemverCanUseCompatibleZeroBasedVersion {
+    CatuiSemver *api = mkSemver(0, 5, 1);
+    CatuiSemver *consumer = mkSemver(0, 5, 0);
+    XCTAssertTrue([api canSupport:consumer]);
+    XCTAssertTrue([consumer canUse:api]);
+}
+
+- (void)testSemverCantUseIncompatibleZeroBasedVersion {
+    CatuiSemver *api = mkSemver(0, 2, 0);
+    CatuiSemver *consumer = mkSemver(0, 1, 3);
+    XCTAssertFalse([api canSupport:consumer]);
+    XCTAssertFalse([consumer canUse:api]);
 }
 
 @end
