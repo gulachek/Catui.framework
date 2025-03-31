@@ -82,4 +82,13 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
     XCTAssertEqual(v.patch, 3);
 }
 
+- (void)testInitErrorsWithInvalidString {
+    NSError *err = nil;
+    CatuiSemver *v = [[CatuiSemver alloc] initWithString:@"hello" error:&err];
+    XCTAssertNil(v);
+    XCTAssertNotNil(err);
+    XCTAssertEqual(err.domain, CatuiSemverErrorDomain);
+    XCTAssertEqual(err.code, CatuiSemverErrorCodeInvalidSemverString);
+}
+
 @end
