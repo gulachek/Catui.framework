@@ -10,11 +10,11 @@
 
 @interface CatuiSemver : NSObject
 
-@property (readonly) unsigned int major;
-@property (readonly) unsigned int minor;
-@property (readonly) unsigned int patch;
+@property (readonly) uint16_t major;
+@property (readonly) uint16_t minor;
+@property (readonly) uint32_t patch;
 
-- (id)initWithMajor:(unsigned int)major minor:(unsigned int)minor patch:(unsigned int)patch;
+- (id)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch;
 
 - (BOOL)canUse:(CatuiSemver *)api;
 - (BOOL)canSupport:(CatuiSemver *)consumer;

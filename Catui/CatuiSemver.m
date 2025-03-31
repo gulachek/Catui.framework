@@ -9,23 +9,39 @@
 
 #import <Catui/CatuiSemver.h>
 
-@implementation CatuiSemver
+#include <vendor/include/catui.h>
 
-- (id)initWithMajor:(unsigned int)major minor:(unsigned int)minor patch:(unsigned int)patch {
-    self->_major = major;
-    self->_minor = minor;
-    self->_patch = patch;
+@implementation CatuiSemver {
+    catui_semver _v;
+}
+
+- (id)initWithMajor:(uint16_t)major minor:(uint16_t)minor patch:(uint32_t)patch {
+    _v.major = major;
+    _v.minor = minor;
+    _v.patch = patch;
     return self;
+}
+
+- (uint16_t)major {
+    return _v.major;
+}
+
+- (uint16_t)minor {
+    return _v.minor;
+}
+
+- (uint32_t)patch {
+    return _v.patch;
 }
 
 - (BOOL)canUse:(CatuiSemver *)api {
     if (!api) return NO;
-    return YES;
+    return catui_semver_can_use(&self->_v, &api->_v);
 }
 
 - (BOOL)canSupport:(CatuiSemver *)consumer {
     if (!consumer) return NO;
-    return [consumer canUse:self];
+    return catui_semver_can_support(&self->_v, &consumer->_v);
 }
 
 @end
