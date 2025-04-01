@@ -1,0 +1,12 @@
+name: Push Tests
+
+on: [push]
+
+jobs:
+  unit-tests:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: script/install-deps.sh
+      - run: xcodebuild # TODO run tests
