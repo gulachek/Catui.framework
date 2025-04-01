@@ -5,6 +5,9 @@ set -x
 
 . script/util.sh
 
+# Use this to allow building fat binaries
+CMAKE_ARCH="-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64"
+
 cmake_build_install() {
 	cmake --build build
 	cmake --install build --prefix "$VENDOR"
@@ -27,7 +30,11 @@ untar -d "$CJSON" -f "$CJSON_DOWNLOAD"
 # cJSON CMakeLists.txt configures files that have full install paths. Must define prefix
 
 cd "$CJSON"
-cmake -DENABLE_CJSON_TEST=OFF -DBUILD_SHARED_LIBS=OFF "-DCMAKE_INSTALL_PREFIX=$VENDOR" -S . -B build
+cmake -DENABLE_CJSON_TEST=OFF \
+	"$CMAKE_ARCH" \
+	-DBUILD_SHARED_LIBS=OFF \
+	"-DCMAKE_INSTALL_PREFIX=$VENDOR" \
+	-S . -B build
 cmake_build_install
 
 rm "$CJSON_DOWNLOAD"
@@ -44,7 +51,7 @@ md "$MSGSTREAM"
 
 untar -f "$MSGSTREAM_DOWNLOAD" -d "$MSGSTREAM"
 cd "$MSGSTREAM"
-cmake -S . -B build
+cmake "$CMAKE_ARCH" -S . -B build
 cmake_build_install
 
 rm "$MSGSTREAM_DOWNLOAD"
@@ -62,7 +69,7 @@ md "$UNIX"
 
 untar -f "$UNIX_DOWNLOAD" -d "$UNIX"
 cd "$UNIX"
-cmake -S . -B build
+cmake "$CMAKE_ARCH" -S . -B build
 cmake_build_install
 
 rm "$UNIX_DOWNLOAD"
@@ -80,7 +87,7 @@ md "$CATUI"
 
 untar -f "$CATUI_DOWNLOAD" -d "$CATUI"
 cd "$CATUI"
-cmake -DCMAKE_PREFIX_PATH="$VENDOR" -S . -B build
+cmake "$CMAKE_ARCH" -DCMAKE_PREFIX_PATH="$VENDOR" -S . -B build
 cmake_build_install
 
 rm "$CATUI_DOWNLOAD"
