@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D7359F132D9643A100E7D0C1 /* Catui.docc in Sources */ = {isa = PBXBuildFile; fileRef = D7359F122D9643A100E7D0C1 /* Catui.docc */; };
 		D7359F192D9643A100E7D0C1 /* Catui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7359F0E2D9643A100E7D0C1 /* Catui.framework */; };
-		D7359F1E2D9643A100E7D0C1 /* CatuiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7359F1D2D9643A100E7D0C1 /* CatuiTests.m */; };
+		D7359F1E2D9643A100E7D0C1 /* CatuiSemverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */; };
 		D7359F1F2D9643A100E7D0C1 /* Catui.h in Headers */ = {isa = PBXBuildFile; fileRef = D7359F112D9643A100E7D0C1 /* Catui.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7359F2A2D964A1400E7D0C1 /* Catui.m in Sources */ = {isa = PBXBuildFile; fileRef = D7359F292D964A1400E7D0C1 /* Catui.m */; };
 		D76945B02D96D0030085312E /* CatuiSemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D76945AF2D96D0030085312E /* CatuiSemver.m */; };
@@ -31,7 +31,7 @@
 		D7359F112D9643A100E7D0C1 /* Catui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catui.h; sourceTree = "<group>"; };
 		D7359F122D9643A100E7D0C1 /* Catui.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Catui.docc; sourceTree = "<group>"; };
 		D7359F182D9643A100E7D0C1 /* CatuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7359F1D2D9643A100E7D0C1 /* CatuiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiTests.m; sourceTree = "<group>"; };
+		D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiSemverTests.m; sourceTree = "<group>"; };
 		D7359F292D964A1400E7D0C1 /* Catui.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catui.m; sourceTree = "<group>"; };
 		D76945AF2D96D0030085312E /* CatuiSemver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiSemver.m; sourceTree = "<group>"; };
 		D76945B12D96D0150085312E /* CatuiSemver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiSemver.h; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		D7359F1C2D9643A100E7D0C1 /* CatuiTests */ = {
 			isa = PBXGroup;
 			children = (
-				D7359F1D2D9643A100E7D0C1 /* CatuiTests.m */,
+				D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */,
 			);
 			path = CatuiTests;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7359F1E2D9643A100E7D0C1 /* CatuiTests.m in Sources */,
+				D7359F1E2D9643A100E7D0C1 /* CatuiSemverTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
