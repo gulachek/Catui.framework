@@ -14,5 +14,6 @@ FOUNDATION_EXPORT double CatuiVersionNumber;
 FOUNDATION_EXPORT const unsigned char CatuiVersionString[];
 
 #import <Catui/CatuiSemver.h>
+#import <Catui/CatuiConnectRequest.h>
 
 int CatuiFoo(void);

@@ -1,6 +1,6 @@
 //
-//  CatuiTests.m
-//  CatuiTests
+//  CatuiSemverTests.m
+//  CatuiSemverTests
 //
 //  Created by Nicholas Gulachek on 3/27/25.
 //
