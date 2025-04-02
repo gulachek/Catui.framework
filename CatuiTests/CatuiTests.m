@@ -91,4 +91,12 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
     XCTAssertEqual(err.code, CatuiSemverErrorCodeInvalidSemverString);
 }
 
+- (void)testDescriptionRepresentsSemverAsString {
+    CatuiSemver *v = [[CatuiSemver alloc] initWithString:@"1.2.3" error:nil];
+    XCTAssertNotNil(v);
+    
+    NSString *str = v.description;
+    XCTAssertTrue([str isEqual:@"1.2.3"]);
+}
+
 @end

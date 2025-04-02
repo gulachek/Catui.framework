@@ -62,4 +62,13 @@ NSString *const CatuiSemverErrorDomain = @"com.gulachek.CatuiSemver";
     return catui_semver_can_support(&self->_v, &consumer->_v);
 }
 
+- (NSString*)description {
+    char buf[CATUI_VERSION_SIZE];
+    if (!catui_semver_to_string(&self->_v, buf, CATUI_VERSION_SIZE)) {
+        return @"(Failed to serialize semver)";
+    }
+    
+    return [NSString stringWithCString:buf encoding:NSUTF8StringEncoding];
+}
+
 @end
