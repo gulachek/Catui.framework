@@ -10,3 +10,10 @@ jobs:
       - name: Install Dependencies
         run: script/install-deps.sh
       - run: xcodebuild -scheme Catui test
+  test-pkg:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: script/install-deps.sh
+      - run: script/test-pkg.sh
