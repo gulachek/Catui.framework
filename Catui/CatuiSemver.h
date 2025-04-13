@@ -8,10 +8,11 @@
 #ifndef CatuiSemver_h
 #define CatuiSemver_h
 
-FOUNDATION_EXPORT NSString *const _Nonnull CatuiSemverErrorDomain;
+FOUNDATION_EXPORT NSString *const _Nonnull CatuiErrorDomain;
 
-typedef NS_ENUM(NSInteger, CatuiSemverErrorCode) {
-    CatuiSemverErrorCodeInvalidSemverString = 1001
+typedef NS_ENUM(NSInteger, CatuiErrorCode) {
+    CatuiErrorCodeInvalidSemverString = 1001,
+    CatuiErrorCodeInvalidConnectRequestString = 1002
 };
 
 /**

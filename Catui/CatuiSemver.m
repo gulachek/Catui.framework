@@ -11,7 +11,7 @@
 
 #include <vendor/include/catui.h>
 
-NSString *const CatuiSemverErrorDomain = @"com.gulachek.CatuiSemver";
+NSString *const CatuiErrorDomain = @"com.gulachek.Catui";
 
 @implementation CatuiSemver {
     catui_semver _v;
@@ -29,8 +29,8 @@ NSString *const CatuiSemverErrorDomain = @"com.gulachek.CatuiSemver";
     int success = catui_semver_from_string(cstr, strlen(cstr), &self->_v);
     if (!success) {
         if (error != nil) {
-            *error = [NSError errorWithDomain:CatuiSemverErrorDomain
-                                         code:CatuiSemverErrorCodeInvalidSemverString
+            *error = [NSError errorWithDomain:CatuiErrorDomain
+                                         code:CatuiErrorCodeInvalidSemverString
                                      userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"Invalid semver string", @"")}
             ];
         }

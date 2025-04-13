@@ -35,4 +35,30 @@
     XCTAssertEqual(req.catuiVersion, cv);
 }
 
+- (void)testCanDecode {
+    const char *json = "{\"catui-version\":\"0.1.0\",\"version\":\"1.2.3\",\"protocol\":\"com.example.test\"}";
+    
+    NSError *err = nil;
+    CatuiConnectRequest *req = [[CatuiConnectRequest alloc] initWithBytes:json length:strlen(json) error:&err];
+    
+    XCTAssertNil(err);
+    XCTAssertNotNil(req);
+    XCTAssertTrue([req.protocol isEqual:@"com.example.test"]);
+    XCTAssertTrue([req.version.description isEqual:@"1.2.3"]);
+    XCTAssertTrue([req.catuiVersion.description isEqual:@"0.1.0"]);
+}
+
+- (void)testDetectsDecodingErrors {
+    // swap '-' in "catui-version" for '_' as a realistic error
+    const char *json = "{\"catui_version\":\"0.1.0\",\"version\":\"1.2.3\",\"protocol\":\"com.example.test\"}";
+    
+    NSError *err = nil;
+    CatuiConnectRequest *req = [[CatuiConnectRequest alloc] initWithBytes:json length:strlen(json) error:&err];
+    
+    XCTAssertNil(req);
+    XCTAssertNotNil(err);
+    XCTAssertEqual(err.domain, CatuiErrorDomain);
+    XCTAssertEqual(err.code, CatuiErrorCodeInvalidConnectRequestString);
+}
+
 @end

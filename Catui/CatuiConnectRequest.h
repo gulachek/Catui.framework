@@ -19,6 +19,8 @@
 
 -(nonnull instancetype)initWithProtocol:(NSString*_Nonnull)proto version:(CatuiSemver*_Nonnull)protoVersion catuiVersion:(CatuiSemver*_Nonnull)catuiVersion;
 
+-(nullable instancetype)initWithBytes:(const void*_Nonnull)bytes length:(size_t)length error:(NSError *_Nullable *_Nullable)error;
+
 @end
 
 #endif /* CatuiConnectRequest_h */

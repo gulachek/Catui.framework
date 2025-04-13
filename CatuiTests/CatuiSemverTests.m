@@ -87,8 +87,8 @@ CatuiSemver *mkSemver(unsigned int major, unsigned int minor, unsigned int patch
     CatuiSemver *v = [[CatuiSemver alloc] initWithString:@"hello" error:&err];
     XCTAssertNil(v);
     XCTAssertNotNil(err);
-    XCTAssertEqual(err.domain, CatuiSemverErrorDomain);
-    XCTAssertEqual(err.code, CatuiSemverErrorCodeInvalidSemverString);
+    XCTAssertEqual(err.domain, CatuiErrorDomain);
+    XCTAssertEqual(err.code, CatuiErrorCodeInvalidSemverString);
 }
 
 - (void)testDescriptionRepresentsSemverAsString {
