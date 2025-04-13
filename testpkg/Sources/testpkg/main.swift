@@ -5,3 +5,14 @@ let v2 = try! CatuiSemver(string:"2.3.4")
 let v3 = CatuiSemver(major:1, minor:3, patch:0)
 print("\(v1) can use \(v2)? \(v1.canUse(v2))")
 print("\(v3) can support \(v1)? \(v3.canSupport(v1))")
+
+let reqBytes = [UInt8]("""
+{
+    "catui-version": "0.1.0",
+    "protocol": "com.example.test",
+    "version": "1.2.3"
+}
+""".utf8)
+
+let req = try! CatuiConnectRequest(bytes:reqBytes, length:reqBytes.count)
+assert(req.version.canUse(v1)) // They are same version 1.2.3
