@@ -11,12 +11,13 @@
 		D7359F192D9643A100E7D0C1 /* Catui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7359F0E2D9643A100E7D0C1 /* Catui.framework */; };
 		D7359F1E2D9643A100E7D0C1 /* CatuiSemverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */; };
 		D7359F1F2D9643A100E7D0C1 /* Catui.h in Headers */ = {isa = PBXBuildFile; fileRef = D7359F112D9643A100E7D0C1 /* Catui.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7359F2A2D964A1400E7D0C1 /* Catui.m in Sources */ = {isa = PBXBuildFile; fileRef = D7359F292D964A1400E7D0C1 /* Catui.m */; };
 		D76945B02D96D0030085312E /* CatuiSemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D76945AF2D96D0030085312E /* CatuiSemver.m */; };
 		D76945B22D96D3C80085312E /* CatuiSemver.h in Headers */ = {isa = PBXBuildFile; fileRef = D76945B12D96D0150085312E /* CatuiSemver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D76945B42D9CE05A0085312E /* CatuiConnectRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D76945B32D9CE05A0085312E /* CatuiConnectRequestTests.m */; };
 		D76945B62D9CE0F00085312E /* CatuiConnectRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D76945B52D9CE0F00085312E /* CatuiConnectRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D76945B82D9CE36C0085312E /* CatuiConnectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D76945B72D9CE36C0085312E /* CatuiConnectRequest.m */; };
+		D779814D2DAC664C0092ED44 /* CatuiError.h in Headers */ = {isa = PBXBuildFile; fileRef = D779814C2DAC664C0092ED44 /* CatuiError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D779814F2DAC672B0092ED44 /* CatuiError.m in Sources */ = {isa = PBXBuildFile; fileRef = D779814E2DAC672B0092ED44 /* CatuiError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +36,13 @@
 		D7359F122D9643A100E7D0C1 /* Catui.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Catui.docc; sourceTree = "<group>"; };
 		D7359F182D9643A100E7D0C1 /* CatuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiSemverTests.m; sourceTree = "<group>"; };
-		D7359F292D964A1400E7D0C1 /* Catui.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catui.m; sourceTree = "<group>"; };
 		D76945AF2D96D0030085312E /* CatuiSemver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiSemver.m; sourceTree = "<group>"; };
 		D76945B12D96D0150085312E /* CatuiSemver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiSemver.h; sourceTree = "<group>"; };
 		D76945B32D9CE05A0085312E /* CatuiConnectRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectRequestTests.m; sourceTree = "<group>"; };
 		D76945B52D9CE0F00085312E /* CatuiConnectRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiConnectRequest.h; sourceTree = "<group>"; };
 		D76945B72D9CE36C0085312E /* CatuiConnectRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectRequest.m; sourceTree = "<group>"; };
+		D779814C2DAC664C0092ED44 /* CatuiError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiError.h; sourceTree = "<group>"; };
+		D779814E2DAC672B0092ED44 /* CatuiError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				D7359F112D9643A100E7D0C1 /* Catui.h */,
-				D7359F292D964A1400E7D0C1 /* Catui.m */,
 				D7359F122D9643A100E7D0C1 /* Catui.docc */,
 				D76945AF2D96D0030085312E /* CatuiSemver.m */,
 				D76945B12D96D0150085312E /* CatuiSemver.h */,
 				D76945B52D9CE0F00085312E /* CatuiConnectRequest.h */,
 				D76945B72D9CE36C0085312E /* CatuiConnectRequest.m */,
+				D779814C2DAC664C0092ED44 /* CatuiError.h */,
+				D779814E2DAC672B0092ED44 /* CatuiError.m */,
 			);
 			path = Catui;
 			sourceTree = "<group>";
@@ -112,6 +115,7 @@
 			files = (
 				D7359F1F2D9643A100E7D0C1 /* Catui.h in Headers */,
 				D76945B22D96D3C80085312E /* CatuiSemver.h in Headers */,
+				D779814D2DAC664C0092ED44 /* CatuiError.h in Headers */,
 				D76945B62D9CE0F00085312E /* CatuiConnectRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +219,7 @@
 			files = (
 				D76945B02D96D0030085312E /* CatuiSemver.m in Sources */,
 				D76945B82D9CE36C0085312E /* CatuiConnectRequest.m in Sources */,
-				D7359F2A2D964A1400E7D0C1 /* Catui.m in Sources */,
+				D779814F2DAC672B0092ED44 /* CatuiError.m in Sources */,
 				D7359F132D9643A100E7D0C1 /* Catui.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

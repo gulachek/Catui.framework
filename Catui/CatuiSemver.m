@@ -5,13 +5,8 @@
 //  Created by Nicholas Gulachek on 3/28/25.
 //
 
-#import <Foundation/Foundation.h>
-
 #import <Catui/CatuiSemver.h>
-
 #include <vendor/include/catui.h>
-
-NSString *const CatuiErrorDomain = @"com.gulachek.Catui";
 
 @implementation CatuiSemver {
     catui_semver _v;

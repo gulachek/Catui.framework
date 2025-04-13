@@ -8,12 +8,8 @@
 #ifndef CatuiSemver_h
 #define CatuiSemver_h
 
-FOUNDATION_EXPORT NSString *const _Nonnull CatuiErrorDomain;
-
-typedef NS_ENUM(NSInteger, CatuiErrorCode) {
-    CatuiErrorCodeInvalidSemverString = 1001,
-    CatuiErrorCodeInvalidConnectRequestString = 1002
-};
+#import <Foundation/Foundation.h>
+#import <Catui/CatuiError.h>
 
 /**
  * Represents a semantic version as applied in the catui protocol

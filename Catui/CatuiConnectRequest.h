@@ -9,6 +9,7 @@
 #define CatuiConnectRequest_h
 
 #import <Foundation/Foundation.h>
+#import <Catui/CatuiError.h>
 #import <Catui/CatuiSemver.h>
 
 @interface CatuiConnectRequest : NSObject
