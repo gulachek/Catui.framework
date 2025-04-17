@@ -15,6 +15,7 @@ cmake_build_install() {
 }
 
 SRC="$PWD"
+DEP_LICENSES="$SRC/DEPENDENCY-LICENSES"
 
 # cJSON
 CJSON_DOWNLOAD="$VENDORSRC/download-cjson.tgz"
@@ -27,6 +28,8 @@ CJSON="$VENDORSRC/cJSON"
 md "$CJSON"
 
 untar -d "$CJSON" -f "$CJSON_DOWNLOAD"
+cp "$CJSON/LICENSE" "$DEP_LICENSES/cJSON.txt"
+
 # cJSON CMakeLists.txt configures files that have full install paths. Must define prefix
 
 cd "$CJSON"
@@ -50,6 +53,8 @@ MSGSTREAM="$VENDORSRC/msgstream"
 md "$MSGSTREAM"
 
 untar -f "$MSGSTREAM_DOWNLOAD" -d "$MSGSTREAM"
+cp "$MSGSTREAM/LICENSE.txt" "$DEP_LICENSES/msgstream.txt"
+
 cd "$MSGSTREAM"
 cmake "$CMAKE_ARCH" -S . -B build
 cmake_build_install
@@ -68,6 +73,8 @@ UNIX="$VENDORSRC/unixsocket"
 md "$UNIX"
 
 untar -f "$UNIX_DOWNLOAD" -d "$UNIX"
+cp "$UNIX/LICENSE.txt" "$DEP_LICENSES/unixsocket.txt"
+
 cd "$UNIX"
 cmake "$CMAKE_ARCH" -S . -B build
 cmake_build_install
@@ -86,6 +93,8 @@ CATUI="$VENDORSRC/catui"
 md "$CATUI"
 
 untar -f "$CATUI_DOWNLOAD" -d "$CATUI"
+cp "$CATUI/LICENSE.txt" "$DEP_LICENSES/catui.txt"
+
 cd "$CATUI"
 cmake "$CMAKE_ARCH" -DCMAKE_PREFIX_PATH="$VENDOR" -S . -B build
 cmake_build_install
