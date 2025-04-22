@@ -20,6 +20,9 @@
 		D779814F2DAC672B0092ED44 /* CatuiError.m in Sources */ = {isa = PBXBuildFile; fileRef = D779814E2DAC672B0092ED44 /* CatuiError.m */; };
 		D78F79F12DAD4149002DF802 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D78F79F02DAD4149002DF802 /* LICENSE */; };
 		D78F79F42DB13C29002DF802 /* DEPENDENCY-LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = D78F79F32DB13C29002DF802 /* DEPENDENCY-LICENSES */; };
+		D78F79F62DB85F06002DF802 /* CatuiConnectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D78F79F82DB86090002DF802 /* CatuiConnectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */; };
+		D78F79FA2DB8623E002DF802 /* CatuiConnectResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D78F79F92DB8623E002DF802 /* CatuiConnectResponseTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D779814E2DAC672B0092ED44 /* CatuiError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiError.m; sourceTree = "<group>"; };
 		D78F79F02DAD4149002DF802 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		D78F79F32DB13C29002DF802 /* DEPENDENCY-LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DEPENDENCY-LICENSES"; sourceTree = SOURCE_ROOT; };
+		D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiConnectResponse.h; sourceTree = "<group>"; };
+		D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectResponse.m; sourceTree = "<group>"; };
+		D78F79F92DB8623E002DF802 /* CatuiConnectResponseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectResponseTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 				D76945AF2D96D0030085312E /* CatuiSemver.m */,
 				D76945B12D96D0150085312E /* CatuiSemver.h */,
 				D76945B52D9CE0F00085312E /* CatuiConnectRequest.h */,
+				D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */,
+				D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */,
 				D76945B72D9CE36C0085312E /* CatuiConnectRequest.m */,
 				D779814C2DAC664C0092ED44 /* CatuiError.h */,
 				D779814E2DAC672B0092ED44 /* CatuiError.m */,
@@ -108,6 +116,7 @@
 			children = (
 				D7359F1D2D9643A100E7D0C1 /* CatuiSemverTests.m */,
 				D76945B32D9CE05A0085312E /* CatuiConnectRequestTests.m */,
+				D78F79F92DB8623E002DF802 /* CatuiConnectResponseTests.m */,
 			);
 			path = CatuiTests;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 				D7359F1F2D9643A100E7D0C1 /* Catui.h in Headers */,
 				D76945B22D96D3C80085312E /* CatuiSemver.h in Headers */,
 				D779814D2DAC664C0092ED44 /* CatuiError.h in Headers */,
+				D78F79F62DB85F06002DF802 /* CatuiConnectResponse.h in Headers */,
 				D76945B62D9CE0F00085312E /* CatuiConnectRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +238,7 @@
 				D76945B02D96D0030085312E /* CatuiSemver.m in Sources */,
 				D76945B82D9CE36C0085312E /* CatuiConnectRequest.m in Sources */,
 				D779814F2DAC672B0092ED44 /* CatuiError.m in Sources */,
+				D78F79F82DB86090002DF802 /* CatuiConnectResponse.m in Sources */,
 				D7359F132D9643A100E7D0C1 /* Catui.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +249,7 @@
 			files = (
 				D7359F1E2D9643A100E7D0C1 /* CatuiSemverTests.m in Sources */,
 				D76945B42D9CE05A0085312E /* CatuiConnectRequestTests.m in Sources */,
+				D78F79FA2DB8623E002DF802 /* CatuiConnectResponseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
