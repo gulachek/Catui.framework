@@ -25,13 +25,77 @@
 - (void)testCanConstructWithErrorMsg {
     CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] initWithErrorMsg:@"hello"];
     
-    XCTAssertEqual(resp.errorMsg, @"hello");
+    XCTAssertEqualObjects(resp.errorMsg, @"hello");
 }
 
 - (void)testCanConstructWithoutErrorMsg {
     CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] init];
     
     XCTAssertNil(resp.errorMsg);
+}
+
+- (void)testEncodingHasErrorWithNilMsgSize {
+    CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] init];
+    NSError *err;
+    uint8_t buf[1024];
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+    BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:nil error:&err];
+#pragma clang diagnostic pop
+    
+    XCTAssertFalse(ret);
+    XCTAssertNotNil(err);
+    XCTAssertEqual(err.domain, CatuiErrorDomain);
+    XCTAssertEqual(err.code, CatuiErrorCodeInvalidParam);
+}
+
+- (void)testEncodingWithoutErrorMsgResultsInZeroSizedMessage {
+    CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] init];
+    NSError *err;
+    uint8_t buf[1024];
+    size_t msgSize;
+    
+    BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:&msgSize error:&err];
+    
+    XCTAssertTrue(ret);
+    XCTAssertNil(err);
+    XCTAssertEqual(msgSize, 0);
+}
+
+- (void)testEncodingWithErrorMsgEncodesJsonWithErrorProperty {
+    CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] initWithErrorMsg:@"Hello!"];
+    
+    NSError *err;
+    uint8_t buf[1024];
+    size_t msgSize;
+    
+    BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:&msgSize error:&err];
+    
+    XCTAssertTrue(ret);
+    XCTAssertNil(err);
+    
+    NSData *data = [NSData dataWithBytes:buf length:msgSize];
+    NSDictionary *obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+    
+    XCTAssertNotNil(data);
+    XCTAssertNil(err);
+    XCTAssertEqualObjects(obj[@"error"], @"Hello!");
+}
+
+- (void)testEncodingHasErrorWhenBufferNotLargeEnough {
+    CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] initWithErrorMsg:@"Hello!"];
+    
+    NSError *err;
+    uint8_t buf[2];
+    size_t msgSize;
+    
+    BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:&msgSize error:&err];
+    
+    XCTAssertFalse(ret);
+    XCTAssertNotNil(err);
+    XCTAssertEqual(err.domain, CatuiErrorDomain);
+    XCTAssertEqual(err.code, CatuiErrorCodeFailure);
 }
 
 @end

@@ -13,8 +13,10 @@
 FOUNDATION_EXPORT NSString *const _Nonnull CatuiErrorDomain;
 
 typedef NS_ENUM(NSInteger, CatuiErrorCode) {
-    CatuiErrorCodeInvalidSemverString = 1001,
-    CatuiErrorCodeInvalidConnectRequestString = 1002
+    CatuiErrorCodeFailure = 1000,
+    CatuiErrorCodeInvalidParam = 1001,
+    CatuiErrorCodeInvalidSemverString = 1002,
+    CatuiErrorCodeInvalidConnectRequestString = 1003
 };
 
 #endif /* CatuiError_h */
