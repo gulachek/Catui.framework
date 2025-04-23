@@ -5,6 +5,10 @@ on:
 jobs:
   package:
     runs-on: macos-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - name: Install Dependencies
