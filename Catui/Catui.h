@@ -16,3 +16,4 @@ FOUNDATION_EXPORT const unsigned char CatuiVersionString[];
 #import <Catui/CatuiSemver.h>
 #import <Catui/CatuiConnectRequest.h>
 #import <Catui/CatuiConnectResponse.h>
+#import <Catui/CatuiBufSize.h>

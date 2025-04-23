@@ -37,7 +37,7 @@
 - (void)testEncodingHasErrorWithNilMsgSize {
     CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] init];
     NSError *err;
-    uint8_t buf[1024];
+    uint8_t buf[CatuiConnectResponseBufSize];
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"
@@ -53,7 +53,7 @@
 - (void)testEncodingWithoutErrorMsgResultsInZeroSizedMessage {
     CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] init];
     NSError *err;
-    uint8_t buf[1024];
+    uint8_t buf[CatuiConnectResponseBufSize];
     size_t msgSize;
     
     BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:&msgSize error:&err];
@@ -67,7 +67,7 @@
     CatuiConnectResponse *resp = [[CatuiConnectResponse alloc] initWithErrorMsg:@"Hello!"];
     
     NSError *err;
-    uint8_t buf[1024];
+    uint8_t buf[CatuiConnectResponseBufSize];
     size_t msgSize;
     
     BOOL ret = [resp encodeBytes:buf bufSize:sizeof(buf) msgSize:&msgSize error:&err];

@@ -23,6 +23,7 @@
 		D78F79F62DB85F06002DF802 /* CatuiConnectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D78F79F82DB86090002DF802 /* CatuiConnectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */; };
 		D78F79FA2DB8623E002DF802 /* CatuiConnectResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D78F79F92DB8623E002DF802 /* CatuiConnectResponseTests.m */; };
+		D78F79FC2DB95C26002DF802 /* CatuiBufSize.h in Headers */ = {isa = PBXBuildFile; fileRef = D78F79FB2DB95C26002DF802 /* CatuiBufSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiConnectResponse.h; sourceTree = "<group>"; };
 		D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectResponse.m; sourceTree = "<group>"; };
 		D78F79F92DB8623E002DF802 /* CatuiConnectResponseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatuiConnectResponseTests.m; sourceTree = "<group>"; };
+		D78F79FB2DB95C26002DF802 /* CatuiBufSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatuiBufSize.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				D7359F122D9643A100E7D0C1 /* Catui.docc */,
 				D76945AF2D96D0030085312E /* CatuiSemver.m */,
 				D76945B12D96D0150085312E /* CatuiSemver.h */,
+				D78F79FB2DB95C26002DF802 /* CatuiBufSize.h */,
 				D76945B52D9CE0F00085312E /* CatuiConnectRequest.h */,
 				D78F79F52DB85F05002DF802 /* CatuiConnectResponse.h */,
 				D78F79F72DB86090002DF802 /* CatuiConnectResponse.m */,
@@ -132,6 +135,7 @@
 				D76945B22D96D3C80085312E /* CatuiSemver.h in Headers */,
 				D779814D2DAC664C0092ED44 /* CatuiError.h in Headers */,
 				D78F79F62DB85F06002DF802 /* CatuiConnectResponse.h in Headers */,
+				D78F79FC2DB95C26002DF802 /* CatuiBufSize.h in Headers */,
 				D76945B62D9CE0F00085312E /* CatuiConnectRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
