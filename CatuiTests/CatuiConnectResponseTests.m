@@ -96,6 +96,7 @@
     XCTAssertNotNil(err);
     XCTAssertEqual(err.domain, CatuiErrorDomain);
     XCTAssertEqual(err.code, CatuiErrorCodeFailure);
+    XCTAssertEqual(msgSize, 0);
 }
 
 @end

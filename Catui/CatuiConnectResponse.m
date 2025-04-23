@@ -24,6 +24,7 @@
         }
         return NO;
     }
+    *msgSize = 0;
     
     if (self->_errorMsg) {
         int16_t ret = catui_server_encode_nack(buf, bufSize, [self->_errorMsg cStringUsingEncoding:NSUTF8StringEncoding], nil);
