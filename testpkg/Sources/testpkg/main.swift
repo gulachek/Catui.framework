@@ -14,5 +14,12 @@ let reqBytes = [UInt8]("""
 }
 """.utf8)
 
+assert(reqBytes.count <= CatuiConnectRequestBufSize)
 let req = try! CatuiConnectRequest(bytes:reqBytes, length:reqBytes.count)
 assert(req.version.canUse(v1)) // They are same version 1.2.3
+
+var respBuf = [UInt8](repeating: 0, count: CatuiConnectResponseBufSize)
+let resp = CatuiConnectResponse(errorMsg:"Hello!")
+var msgSize = 0
+try! resp.encodeBytes(&respBuf, bufSize:respBuf.count, msgSize:&msgSize)
+assert(0 < msgSize)

@@ -13,6 +13,11 @@
 #import <Catui/CatuiSemver.h>
 
 /**
+ * Maximum size needed to contain an encoded connect request message
+ */
+static const NSInteger CatuiConnectRequestBufSize = 1024;
+
+/**
  * Represents a connect request
  */
 @interface CatuiConnectRequest : NSObject

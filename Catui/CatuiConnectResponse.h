@@ -12,6 +12,11 @@
 #import <Catui/CatuiError.h>
 
 /**
+ * Maximum size needed to contain an encoded connect response message
+ */
+static const NSInteger CatuiConnectResponseBufSize = 1024;
+
+/**
  * Represents a catui connect response
  */
 @interface CatuiConnectResponse : NSObject
